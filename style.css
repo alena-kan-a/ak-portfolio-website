@@ -5,6 +5,47 @@
 :root {
   --font-primary: "Newsreader", Georgia, serif;
   --font-secondary: "GeneralSans", Arial, Helvetica, sans-serif;
+
+  --fs-12pt: calc((12 * 1.3333343412075) / 16 * 1rem);
+  --fs-14pt: calc((14 * 1.3333343412075) / 16 * 1rem);
+  --fs-16pt: calc((16 * 1.3333343412075) / 16 * 1rem);
+  --fs-18pt: calc((18 * 1.3333343412075) / 16 * 1rem);
+  --fs-24pt: calc((24 * 1.3333343412075) / 16 * 1rem);
+  --fs-30pt: calc((30 * 1.3333343412075) / 16 * 1rem);
+  --fs-36pt: calc((36 * 1.3333343412075) / 16 * 1rem);
+  --fs-48pt: calc((48 * 1.3333343412075) / 16 * 1rem);
+
+  --font-size-header: var(--fs-30pt);
+  --font-size-language: var(--fs-18pt);
+  --font-size-topnav: var(--fs-18pt);
+  --font-size-section-title: var(--fs-24pt);
+  --font-size-project-title: var(--fs-18pt);
+  --font-size-project-subtitle: var(--fs-18pt);
+  --font-size-project-tags: var(--fs-12pt);
+  --font-size-body-text: var(--fs-16pt);
+  --font-size-contact-form-field-title: var(--fs-14pt);
+  --font-size-contact-form-field-input: var(--fs-14pt);
+  --font-size-privacy-policy-h1: var(--fs-14pt);
+  --font-size-privacy-policy-text: var(--fs-14pt);
+  --font-size-button: var(--fs-18pt);
+  --font-size-footer-text: var(--fs-12pt);
+
+  @media (width >= calc(600 / 16 * 1rem)) {
+    --font-size-header: var(--fs-48pt);
+    --font-size-language: var(--fs-30pt);
+    --font-size-topnav: var(--fs-30pt);
+    --font-size-section-title: var(--fs-36pt);
+    --font-size-project-title: var(--fs-30pt);
+    --font-size-project-subtitle: var(--fs-24pt);
+    --font-size-project-tags: var(--fs-18pt);
+    --font-size-body-text: var(--fs-24pt);
+    --font-size-contact-form-field-title: var(--fs-24pt);
+    --font-size-contact-form-field-input: var(--fs-24pt);
+    --font-size-privacy-policy-h1: var(--fs-18pt);
+    --font-size-privacy-policy-text: var(--fs-18pt);
+    --font-size-button: var(--fs-30pt);
+    --font-size-footer-text: var(--fs-18pt);
+  }
 }
 
 /* Colours */
@@ -36,7 +77,8 @@
 body {
   min-height: 100vh;
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-weight: 300;
+  font-size: var(--font-size-body-text);
   line-height: 1.5;
   color: var(--colour-text-dark-primary);
   background-color: var(--colour-main-bg);

@@ -1,101 +1,155 @@
 @import url("/fonts/css/general-sans.css");
 @import url("/fonts/css/newsreader.css");
 
-/* Fonts */
-:root {
-  --font-primary: "Newsreader", Georgia, serif;
-  --font-secondary: "GeneralSans", Arial, Helvetica, sans-serif;
+@layer global {
+  /* Fonts */
+  :root {
+    --font-primary: "Newsreader", Georgia, serif;
+    --font-secondary: "GeneralSans-Variable", Arial, Helvetica, sans-serif;
 
-  --fs-12pt: calc((12 * 1.3333343412075) / 16 * 1rem);
-  --fs-14pt: calc((14 * 1.3333343412075) / 16 * 1rem);
-  --fs-16pt: calc((16 * 1.3333343412075) / 16 * 1rem);
-  --fs-18pt: calc((18 * 1.3333343412075) / 16 * 1rem);
-  --fs-24pt: calc((24 * 1.3333343412075) / 16 * 1rem);
-  --fs-30pt: calc((30 * 1.3333343412075) / 16 * 1rem);
-  --fs-36pt: calc((36 * 1.3333343412075) / 16 * 1rem);
-  --fs-48pt: calc((48 * 1.3333343412075) / 16 * 1rem);
+    --fs-12px: calc(12 / 16 * 1rem);
+    --fs-14px: calc(14 / 16 * 1rem);
+    --fs-16px: calc(16 / 16 * 1rem);
+    --fs-18px: calc(18 / 16 * 1rem);
+    --fs-20px: calc(20 / 16 * 1rem);
+    --fs-24px: calc(24 / 16 * 1rem);
+    --fs-30px: calc(30 / 16 * 1rem);
+    --fs-36px: calc(36 / 16 * 1rem);
+    --fs-48px: calc(48 / 16 * 1rem);
 
-  --font-size-header: var(--fs-30pt);
-  --font-size-language: var(--fs-18pt);
-  --font-size-topnav: var(--fs-18pt);
-  --font-size-section-title: var(--fs-24pt);
-  --font-size-project-title: var(--fs-18pt);
-  --font-size-project-subtitle: var(--fs-18pt);
-  --font-size-project-tags: var(--fs-12pt);
-  --font-size-body-text: var(--fs-16pt);
-  --font-size-contact-form-field-title: var(--fs-14pt);
-  --font-size-contact-form-field-input: var(--fs-14pt);
-  --font-size-privacy-policy-h1: var(--fs-14pt);
-  --font-size-privacy-policy-text: var(--fs-14pt);
-  --font-size-button: var(--fs-18pt);
-  --font-size-footer-text: var(--fs-12pt);
+    --font-size-h1: var(--fs-30px);
+    --font-size-language: var(--fs-18px);
+    --font-size-topnav: var(--fs-18px);
+    --font-size-h2: var(--fs-24px);
+    --font-size-h3: var(--fs-18px);
+    --font-size-project-subtitle: var(--fs-18px);
+    --font-size-project-tags: var(--fs-12px);
+    --font-size-body-text: var(--fs-16px);
+    --font-size-contact-form-field-title: var(--fs-14px);
+    --font-size-contact-form-field-input: var(--fs-14px);
+    --font-size-privacy-policy-h1: var(--fs-14px);
+    --font-size-privacy-policy-text: var(--fs-14px);
+    --font-size-button: var(--fs-18px);
+    --font-size-footer-text: var(--fs-12px);
 
-  @media (width >= calc(600 / 16 * 1rem)) {
-    --font-size-header: var(--fs-48pt);
-    --font-size-language: var(--fs-30pt);
-    --font-size-topnav: var(--fs-30pt);
-    --font-size-section-title: var(--fs-36pt);
-    --font-size-project-title: var(--fs-30pt);
-    --font-size-project-subtitle: var(--fs-24pt);
-    --font-size-project-tags: var(--fs-18pt);
-    --font-size-body-text: var(--fs-24pt);
-    --font-size-contact-form-field-title: var(--fs-24pt);
-    --font-size-contact-form-field-input: var(--fs-24pt);
-    --font-size-privacy-policy-h1: var(--fs-18pt);
-    --font-size-privacy-policy-text: var(--fs-18pt);
-    --font-size-button: var(--fs-30pt);
-    --font-size-footer-text: var(--fs-18pt);
+    @media (width >= calc(600 / 16 * 1rem)) {
+      --font-size-h1: var(--fs-36px);
+      --font-size-language: var(--fs-30px);
+      --font-size-topnav: var(--fs-30px);
+      --font-size-h2: var(--fs-36px);
+      --font-size-h3: var(--fs-24px);
+      --font-size-project-title: var(--fs-30px);
+      --font-size-project-subtitle: var(--fs-24px);
+      --font-size-project-tags: var(--fs-18px);
+      --font-size-body-text: var(--fs-20px);
+      --font-size-contact-form-field-title: var(--fs-24px);
+      --font-size-contact-form-field-input: var(--fs-24px);
+      --font-size-privacy-policy-h1: var(--fs-18px);
+      --font-size-privacy-policy-text: var(--fs-18px);
+      --font-size-button: var(--fs-30px);
+      --font-size-footer-text: var(--fs-18px);
+    }
+  }
+
+  /* Colours */
+  :root {
+    --c-white: #ffffff;
+    --c-black: #000000;
+    --c-grey-dark: #4d4d4d;
+    --c-grey-midtone: #999999;
+    --c-grey-light: #e6e6e6;
+
+    --colour-main-bg: var(--c-white);
+    --colour-text-dark-primary: var(--c-black);
+    --colour-text-dark-secondary: var(--c-grey-dark);
+    --colour-text-light: var(--c-white);
+    --colour-text-placeholder: var(--c-grey-midtone);
+  }
+
+  /* Reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: var(--font-size-body-text);
+    line-height: 1.3;
+    color: var(--colour-text-dark-primary);
+    background-color: var(--colour-main-bg);
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+    font-weight: 770;
+    font-family: var(--font-secondary);
+    font-variant-caps: small-caps;
+    font-kerning: normal;
+    letter-spacing: -2%;
+    color: var(--colour-text-dark-primary);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 500;
+    font-family: var(--font-primary);
+    font-variant-caps: small-caps;
+    font-kerning: normal;
+    letter-spacing: 0%;
+    color: var(--colour-text-light);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 550;
+    font-family: var(--font-secondary);
+    font-variant-caps: small-caps;
+    font-kerning: normal;
+    letter-spacing: -2%;
+    color: var(--colour-text-dark-primary);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img,
+  picture,
+  svg {
+    max-width: 100%;
+    display: block;
+  }
+
+  .wrapper {
+    width: min(calc(100% - 48px), calc(1200 / 16 * 1rem));
+    margin-inline: auto;
   }
 }
 
-/* Colours */
-:root {
-  --c-white: #ffffff;
-  --c-black: #000000;
-  --c-grey-dark: #4d4d4d;
-  --c-grey-midtone: #999999;
-  --c-grey-light: #e6e6e6;
-
-  --colour-main-bg: var(--c-white);
-  --colour-text-dark-primary: var(--c-black);
-  --colour-text-dark-secondary: var(--c-grey-dark);
-  --colour-text-light: var(--c-white);
-  --colour-text-placeholder: var(--c-grey-midtone);
+@layer component {
 }
 
-/* Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  min-height: 100vh;
-  font-family: var(--font-primary);
-  font-weight: 300;
-  font-size: var(--font-size-body-text);
-  line-height: 1.5;
-  color: var(--colour-text-dark-primary);
-  background-color: var(--colour-main-bg);
-}
-
-a {
-  text-decoration: none;
-}
-
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
-}
-
-.wrapper {
-  width: min(calc(100% - 48px), calc(1200 / 16 * 1rem));
-  margin-inline: auto;
+@layer utility {
+  .visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 }

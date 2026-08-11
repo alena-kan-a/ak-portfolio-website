@@ -1,3 +1,8 @@
+/* List of media queries
+@media (width >= calc(600 / 16 * 1rem))
+@media (width >= calc(1000 / 16 * 1rem))
+*/
+
 @import url("/fonts/css/general-sans.css");
 @import url("/fonts/css/newsreader.css");
 
@@ -64,6 +69,7 @@
     --colour-text-dark-secondary: var(--c-grey-dark);
     --colour-text-light: var(--c-white);
     --colour-text-placeholder: var(--c-grey-midtone);
+    --colour-border: var(--c-grey-light);
   }
 
   /* Reset */
@@ -87,10 +93,21 @@
     background-color: var(--colour-main-bg);
   }
 
+  header {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
   h1,
   h2,
   h3 {
     line-height: 1.1;
+    text-transform: lowercase;
   }
 
   h1 {
@@ -143,17 +160,68 @@
 
 @layer component {
   .topnav {
+    /* Flex-Parent 1 */
+    .topnav__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.6rem;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 0;
+      }
+    }
+
+    /* Child 1 of Flex-Parent 1; Parent 2.1 */
+    .topnav__title-and-lang {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: row;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        padding-bottom: 1rem;
+      }
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        gap: 2rem;
+      }
+    }
+
+    /* Child 2 of Flex-Parent 1; Parent 2.2 */
+    .topnav__links {
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    /* Child 1 of Parent 2.1 */
     .topnav__homelink {
-      text-transform: lowercase;
     }
 
     .topnav__language,
     .topnav__links {
+      display: flex;
+      gap: 2rem;
       list-style-type: none;
       padding: 0;
     }
 
+    /* Child 2 of Parent 2.1; Parent 3 */
+    .topnav__language {
+      gap: 1rem;
+    }
+
+    /* Children of Parent 3 */
     .topnav__lang-item {
+      border-right: 2px solid var(--colour-border);
+      padding-right: 1rem;
+    }
+
+    .topnav__lang-item:last-child {
+      border-right: none;
+      padding-right: 0;
     }
 
     .topnav__lang-link {
@@ -164,10 +232,23 @@
       color: var(--colour-text-dark-secondary);
     }
 
+    /* Children of Parent 2.2 */
     .topnav__item {
+      border-right: 2px solid var(--colour-border);
+      padding-right: 16%;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        padding-right: 2rem;
+      }
+    }
+
+    .topnav__item:last-child {
+      border-right: none;
+      padding-right: 0;
     }
 
     .topnav__link {
+      font-family: var(--font-primary);
       font-size: var(--font-size-topnav);
       font-weight: 400;
       font-variant-caps: small-caps;

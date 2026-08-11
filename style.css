@@ -94,12 +94,12 @@
   }
 
   header {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
+    padding-top: 48px;
+    padding-bottom: 16px;
 
     @media (width >= calc(600 / 16 * 1rem)) {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
   }
 
@@ -149,6 +149,7 @@
   picture,
   svg {
     max-width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -159,6 +160,7 @@
 }
 
 @layer component {
+  /* Top Navigation */
   .topnav {
     /* Flex-Parent 1 */
     .topnav__wrapper {
@@ -187,6 +189,7 @@
 
       @media (width >= calc(1000 / 16 * 1rem)) {
         gap: 2rem;
+        padding-bottom: 0.3rem;
       }
     }
 

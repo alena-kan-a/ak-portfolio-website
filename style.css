@@ -3,6 +3,7 @@
   2. Fix the length of the section title div element when the width of the column below is known
   3. Add images, alt captions and titles to placeholders in the HTML
   4. Make alt images for mobile and desktop versions of the website
+  5. Change header to a fixed position
 */
 
 /* List of media queries
@@ -25,6 +26,7 @@
     --fs-16px: calc(16 / 16 * 1rem);
     --fs-18px: calc(18 / 16 * 1rem);
     --fs-20px: calc(20 / 16 * 1rem);
+    --fs-22px: calc(22 / 16 * 1rem);
     --fs-24px: calc(24 / 16 * 1rem);
     --fs-26px: calc(26 / 16 * 1rem);
     --fs-30px: calc(30 / 16 * 1rem);
@@ -36,7 +38,7 @@
     --font-size-topnav: var(--fs-18px);
     --font-size-h2: var(--fs-24px);
     --font-size-h3: var(--fs-20px);
-    --font-size-project-subtitle: var(--fs-18px);
+    --font-size-project-subtitle: var(--fs-16px);
     --font-size-project-tags: var(--fs-12px);
     --font-size-body-text: var(--fs-16px);
     --font-size-contact-form-field-title: var(--fs-14px);
@@ -52,7 +54,7 @@
       --font-size-topnav: var(--fs-30px);
       --font-size-h2: var(--fs-36px);
       --font-size-h3: var(--fs-26px);
-      --font-size-project-subtitle: var(--fs-24px);
+      --font-size-project-subtitle: var(--fs-22px);
       --font-size-project-tags: var(--fs-18px);
       --font-size-body-text: var(--fs-20px);
       --font-size-contact-form-field-title: var(--fs-24px);
@@ -77,6 +79,7 @@
     --colour-text-dark-primary: var(--c-black);
     --colour-text-dark-secondary: var(--c-grey-dark);
     --colour-text-light: var(--c-white);
+    --colour-text-tags: var(--c-grey-midtone);
     --colour-text-placeholder: var(--c-grey-midtone);
     --colour-border: var(--c-grey-light);
   }
@@ -204,7 +207,7 @@
 
       @media (width >= calc(1000 / 16 * 1rem)) {
         gap: 2rem;
-        padding-bottom: 0.3rem;
+        padding-bottom: 0.3rem; /* added to fix the baseline alignment issue between different fonts */
       }
     }
 
@@ -300,6 +303,45 @@
         padding-left: 84px;
       }
     }
+  }
+
+  .works__wrapper-secondary {
+    width: calc(
+      500 / 16 * 1rem
+    ); /*will potentially remove after adding the grid display*/
+  }
+
+  .works__item {
+    padding-bottom: 2rem;
+  }
+
+  .works__project-link {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .works__project-thumbnail {
+  }
+
+  .works__project-title {
+    display: block;
+    padding-block: 0.3rem 0.5rem;
+  }
+
+  .works__project-industry {
+    border-top: 2px solid var(--colour-border);
+    padding-top: 0.3rem;
+    font-size: var(--font-size-project-subtitle);
+    font-weight: 400;
+    text-transform: lowercase;
+    font-variant-caps: small-caps;
+  }
+
+  .works__project-tags {
+    font-size: var(--font-size-project-tags);
+    font-weight: 400;
+    color: var(--colour-text-tags);
   }
 }
 

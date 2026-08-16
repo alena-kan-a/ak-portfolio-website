@@ -157,20 +157,46 @@
             <h2>About</h2>
           </div>
           <div class="wrapper-secondary about__wrapper-secondary">
-            <h3>ipsum dolor sit amet</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit
-              vitae dolorum totam ut, doloribus, dolor porro, accusamus tempore
-              quibusdam rem quo? Debitis cupiditate architecto similique sit, a
-              quia magni saepe corporis totam velit quo aliquam rerum temporibus
-              magnam molestiae harum ab enim atque, unde, aut alias! Aliquam
-              quis sit, fugit quibusdam beatae quo porro vero pariatur cumque,
-              dicta explicabo illo ab maiores! Sit dolores ex beatae molestiae
-              quae, sequi non quibusdam debitis explicabo, quo unde dignissimos
-              error. Asperiores inventore excepturi explicabo provident ab
-              debitis, quos numquam itaque placeat ipsum est nulla sunt quia,
-              error facilis eveniet! Sequi voluptas architecto aliquid?
-            </p>
+            <div class="about__item about__paragraph">
+              <p>
+                <span class="small-caps"
+                  ><span class="drop-cap">M</span>y name is Alena
+                  Kandazhenka</span
+                >, I am a graphic designer and illustrator currently based in
+                Tokyo, Japan.
+              </p>
+              <p>
+                I am a professional fluent in English and Japanese, which allows
+                me to create designs targeting a wider range of audiences. When
+                creating a layout, I always keep the target audience in mind,
+                and choose the most effective design for it.
+              </p>
+              <p>
+                In addition to graphic design, I have been actively utilizing my
+                illustration skills, and I am applying them in my designs where
+                appropriate.
+              </p>
+              <p>
+                In my work, I have a strong policy against the use of generative
+                AI. I value my clients&#8217; trust, and they can be sure that
+                no potential copyright issues will arise as I either create
+                assets for layouts myself or outsource them to other creative
+                professionals.
+              </p>
+              <p>
+                I am open to different types of projects, and I am especially
+                interested in printed materials and branding. I am looking
+                forward to new opportunities and connections.
+              </p>
+            </div>
+            <div class="about__item about__photo">
+              <img
+                src="img/index/alena-photo_gray-square.png"
+                alt="professional woman smiling"
+                width="500"
+                height="516"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -181,19 +207,50 @@
             <h2>Contact</h2>
           </div>
           <div class="wrapper-secondary about__wrapper-secondary">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit
-              vitae dolorum totam ut, doloribus, dolor porro, accusamus tempore
-              quibusdam rem quo? Debitis cupiditate architecto similique sit, a
-              quia magni saepe corporis totam velit quo aliquam rerum temporibus
-              magnam molestiae harum ab enim atque, unde, aut alias! Aliquam
-              quis sit, fugit quibusdam beatae quo porro vero pariatur cumque,
-              dicta explicabo illo ab maiores! Sit dolores ex beatae molestiae
-              quae, sequi non quibusdam debitis explicabo, quo unde dignissimos
-              error. Asperiores inventore excepturi explicabo provident ab
-              debitis, quos numquam itaque placeat ipsum est nulla sunt quia,
-              error facilis eveniet! Sequi voluptas architecto aliquid?
-            </p>
+            <form class="contact-form" method="post" action="contact.php">
+              <fieldset>
+              <p>Name:</p>
+              <p>
+                <label for="first-name" class="visually-hidden">First</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first_name"
+                  placeholder="First name"
+                  required
+                />
+                <label for="last-name" class="visually-hidden">First</label
+                ><input
+                  type="text"
+                  id="last-name"
+                  name="last_name"
+                  placeholder="Last name"
+                  required
+                />
+              </p>
+              <p>
+                <label for="email">Email:</label
+                ></p></p><input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                />
+              </p>
+              <p><label for="message">Message:</label
+                ></p><p><input
+                  type="text"
+                  id="message"
+                  name="message"
+                  placeholder="Your message"
+                  required
+                /></p>
+                </fieldset>
+                <p class="button">
+  <button type="submit">Submit</button>
+</p>
+            </form>
           </div>
         </div>
       </section>

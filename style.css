@@ -75,13 +75,15 @@
     --c-grey-light: #e6e6e6;
 
     --colour-main-bg: var(--c-white);
+    --colour-border: var(--c-grey-light);
+    --colour-button: var(--c-black);
+
     --colour-secondary-bg: var(--c-black);
     --colour-text-dark-primary: var(--c-black);
     --colour-text-dark-secondary: var(--c-grey-dark);
     --colour-text-light: var(--c-white);
     --colour-text-tags: var(--c-grey-midtone);
     --colour-text-placeholder: var(--c-grey-midtone);
-    --colour-border: var(--c-grey-light);
   }
 
   /* Reset */
@@ -178,6 +180,26 @@
 }
 
 @layer component {
+  button {
+    background-color: var(--colour-button);
+    width: 100%;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-button);
+    font-weight: 400;
+    text-transform: lowercase;
+    font-variant-caps: small-caps;
+    color: var(--colour-text-light);
+    border: none;
+    border-radius: 6px;
+    padding-block: 0.3em;
+    margin-block: 0.5rem;
+    transition: opacity 180ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   /* Top Navigation */
   .topnav {
     /* Flex-Parent 1 */
@@ -252,6 +274,7 @@
       font-size: var(--font-size-language);
       font-variant-caps: small-caps;
       color: var(--colour-text-dark-secondary);
+      transition: opacity 180ms ease-in-out;
       &:hover {
         opacity: 0.7;
       }
@@ -278,12 +301,14 @@
       font-weight: 400;
       font-variant-caps: small-caps;
       color: var(--colour-text-dark-secondary);
+      transition: opacity 180ms ease-in-out;
       &:hover {
         opacity: 0.7;
       }
     }
   }
 
+  /* Elements throughout the page */
   .section-title {
     h2 {
       background-color: var(--colour-secondary-bg);
@@ -305,43 +330,54 @@
     }
   }
 
-  .works__wrapper-secondary {
-    width: calc(
-      500 / 16 * 1rem
-    ); /*will potentially remove after adding the grid display*/
-  }
+  /* Works Section */
+  .works {
+    .works__wrapper-secondary {
+      width: calc(
+        500 / 16 * 1rem
+      ); /*will potentially remove after adding the grid display*/
+    }
 
-  .works__item {
-    padding-bottom: 2rem;
-  }
+    .works__item {
+      padding-bottom: 2rem;
+    }
 
-  .works__project-link {
-    &:hover {
-      opacity: 0.7;
+    .works__project-link {
+      transition: opacity 180ms ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .works__project-thumbnail {
+    }
+
+    .works__project-title {
+      display: block;
+      padding-block: 0.3rem 0.5rem;
+    }
+
+    .works__project-industry {
+      border-top: 2px solid var(--colour-border);
+      padding-top: 0.3rem;
+      font-size: var(--font-size-project-subtitle);
+      font-weight: 400;
+      text-transform: lowercase;
+      font-variant-caps: small-caps;
+    }
+
+    .works__project-tags {
+      font-size: var(--font-size-project-tags);
+      font-weight: 400;
+      color: var(--colour-text-tags);
     }
   }
 
-  .works__project-thumbnail {
-  }
-
-  .works__project-title {
-    display: block;
-    padding-block: 0.3rem 0.5rem;
-  }
-
-  .works__project-industry {
-    border-top: 2px solid var(--colour-border);
-    padding-top: 0.3rem;
-    font-size: var(--font-size-project-subtitle);
-    font-weight: 400;
-    text-transform: lowercase;
-    font-variant-caps: small-caps;
-  }
-
-  .works__project-tags {
-    font-size: var(--font-size-project-tags);
-    font-weight: 400;
-    color: var(--colour-text-tags);
+  .contact {
+    .contact-form__name-items {
+      display: flex;
+      gap: 10px;
+    }
   }
 }
 

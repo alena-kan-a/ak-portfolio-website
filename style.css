@@ -10,6 +10,7 @@
 @media (width >= calc(600 / 16 * 1rem))
 @media (width >= calc(1000 / 16 * 1rem))
 @media (width >= calc(1248 / 16 * 1rem)) -- for section title padding
+@media (width >= calc(1260 / 16 * 1rem)) -- for section items grid
 */
 
 @import url("/fonts/css/general-sans.css");
@@ -122,6 +123,7 @@
   h3 {
     line-height: 1.1;
     text-transform: lowercase;
+    text-wrap: balance;
   }
 
   h1 {
@@ -176,6 +178,12 @@
     width: min(calc(100% - 48px), calc(1032 / 16 * 1rem));
     margin-inline: auto;
     margin-block: 2rem;
+    display: grid;
+    justify-content: center;
+
+    @media (width >= calc(1260 / 16 * 1rem)) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
@@ -310,21 +318,19 @@
 
   /* Elements throughout the page */
   .section-title {
+    margin-inline: auto;
+
+    @media (width >= calc(1248 / 16 * 1rem)) {
+      width: 584px;
+      margin-inline: 0;
+    }
+
     h2 {
       background-color: var(--colour-secondary-bg);
-      width: 100%;
       padding-block: 0.5rem;
-      padding-left: calc(
-        2% + 3vw
-      ); /* FIX WHEN DECIDED THE SIZE OF THE COLUMN BELOW; 500 px with 32 px gap */
-
-      @media (width >= calc(611 / 16 * 1rem)) {
-        width: 584px;
-        padding-left: 84px;
-      } /* FIX WHEN DECIDED THE SIZE OF THE COLUMN BELOW; 500 px with 32 px gap */
+      padding-left: calc(24 / 16 * 1rem);
 
       @media (width >= calc(1248 / 16 * 1rem)) {
-        width: 584px;
         padding-left: 84px;
       }
     }
@@ -332,13 +338,18 @@
 
   /* Works Section */
   .works {
-    .works__wrapper-secondary {
-      width: calc(
-        500 / 16 * 1rem
-      ); /*will potentially remove after adding the grid display*/
+    padding-bottom: 1rem;
+
+    /* .works__wrapper {
     }
+*/
+
+    /* .works__wrapper-secondary {
+    }
+*/
 
     .works__item {
+      max-width: calc(500 / 16 * 1rem);
       padding-bottom: 2rem;
     }
 
@@ -349,8 +360,8 @@
       }
     }
 
-    .works__project-thumbnail {
-    }
+    /* .works__project-thumbnail {
+    } */
 
     .works__project-title {
       display: block;
@@ -370,6 +381,26 @@
       font-size: var(--font-size-project-tags);
       font-weight: 400;
       color: var(--colour-text-tags);
+    }
+
+    .works__more {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      border-top: 2px solid var(--colour-border);
+      padding-top: 0.3rem;
+
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        max-width: calc(
+          100% - 1rem
+        ); /* to make the end of the line align with top elements on desktop */
+      }
+    }
+
+    .works__more-link {
+      transition: opacity 180ms ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 

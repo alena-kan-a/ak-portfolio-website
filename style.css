@@ -427,6 +427,7 @@
     .about__paragraph {
       padding-bottom: 2rem;
       text-indent: 1.5em;
+      line-height: 1.65rem;
 
       @media (width >= calc(1260 / 16 * 1rem)) {
         padding-bottom: 0;
@@ -450,6 +451,13 @@
       display: flex;
       gap: 10px;
     }
+
+    .scrollbar-text {
+      border: 1px solid var(--colour-border);
+      width: auto;
+      height: 500px; /* TEMPORARY, calculate the height based on the form or manage the grid */
+      overflow: scroll;
+    }
   }
 }
 
@@ -461,5 +469,19 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
+  }
+
+  .hidden-on-desktop {
+    display: block;
+    @media (width >= calc(1260 / 16 * 1rem)) {
+      display: none;
+    }
+  }
+
+  .hidden-on-mobile {
+    display: none;
+    @media (width >= calc(1260 / 16 * 1rem)) {
+      display: block;
+    }
   }
 }

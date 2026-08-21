@@ -4,6 +4,8 @@
   3. Add images, alt captions and titles to placeholders in the HTML
   4. Make alt images for mobile and desktop versions of the website
   5. Change header to a fixed position
+  6. Find a solution for textarea paragraphs/indents? Use javascript to indicate paragraphs with a hit of enter?
+  7. Change styles for scrollbars not only for policy but for any scrollbar globally, or, if not possible, do separately both for privacy and textarea
 */
 
 /* List of media queries
@@ -58,8 +60,8 @@
       --font-size-project-subtitle: var(--fs-22px);
       --font-size-project-tags: var(--fs-18px);
       --font-size-body-text: var(--fs-20px);
-      --font-size-contact-form-field-title: var(--fs-24px);
-      --font-size-contact-form-field-input: var(--fs-24px);
+      --font-size-contact-form-field-title: var(--fs-20px);
+      --font-size-contact-form-field-input: var(--fs-20px);
       --font-size-privacy-policy-h1: var(--fs-18px);
       --font-size-privacy-policy-text: var(--fs-18px);
       --font-size-button: var(--fs-30px);
@@ -427,7 +429,7 @@
     .about__paragraph {
       padding-bottom: 2rem;
       text-indent: 1.5em;
-      line-height: 1.65rem;
+      line-height: 1.35em;
 
       @media (width >= calc(1260 / 16 * 1rem)) {
         padding-bottom: 0;
@@ -447,9 +449,41 @@
   }
 
   .contact {
+    .contact__item {
+      max-width: calc(500 / 16 * 1rem);
+
+      .contact__item-first {
+        margin-top: 20px;
+        border-top: 2px solid var(--colour-border);
+        border-bottom: 2px solid var(--colour-border);
+      }
+
+      .contact__item-last_mobile {
+      }
+    }
+
     .contact-form__name-items {
       display: flex;
       gap: 10px;
+    }
+
+    form {
+      border-top: 2px solid var(--colour-border);
+    }
+
+    fieldset {
+      border: none;
+    }
+
+    .input-titles {
+      display: block;
+      padding-block: 12px 6px;
+      font-size: var(--font-size-contact-form-field-title);
+      font-weight: 400;
+
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        padding-block: 16px 6px;
+      }
     }
 
     .scrollbar-text {
@@ -457,6 +491,31 @@
       width: auto;
       height: 500px; /* TEMPORARY, calculate the height based on the form or manage the grid */
       overflow: scroll;
+    }
+
+    .input_text-field {
+      text-indent: 1em;
+      font-family: var(--font-primary);
+      font-weight: 300;
+      font-size: var(--font-size-contact-form-field-input);
+      width: 100%;
+      padding-block: 0.5em;
+      border-radius: 6px;
+      border: 1px solid var(--colour-border);
+      outline: none;
+      box-shadow: var(--colour-border) 1px 1px 3px;
+    }
+
+    .input_long-text {
+      height: 10em;
+      line-height: 1.5em;
+      text-indent: 0;
+      padding-left: 1em;
+    }
+
+    .submit {
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--colour-border);
     }
   }
 }

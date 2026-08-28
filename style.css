@@ -6,6 +6,9 @@
   5. Change header to a fixed position
   6. Find a solution for textarea paragraphs/indents? Use javascript to indicate paragraphs with a hit of enter?
   7. Change styles for scrollbars not only for policy but for any scrollbar globally, or, if not possible, do separately both for privacy and textarea
+  8. Find a more efficient way to calculate the height of the privacy policy scrollbar text on desktop
+  9. Change the global style for checkmarks
+  10. Turn the checkmark for "Display Privacy Policy:" into a toggle
 */
 
 /* List of media queries
@@ -455,9 +458,10 @@
   /* Contact Section */
   .contact {
     .contact__email {
-      margin-top: 20px;
-      width: min(calc(100% - 48px), calc(1032 / 16 * 1rem));
-      margin-inline: auto;
+      grid-column: 1 / -1;
+      max-width: 100%;
+      border-bottom: 2px solid var(--colour-border);
+      padding-bottom: 20px;
 
       .email-address {
         display: block;
@@ -467,14 +471,15 @@
       }
     }
 
+    .contact__border-bottom {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      border-bottom: 2px solid var(--colour-border);
+    }
+
     .contact__item {
       max-width: calc(500 / 16 * 1rem);
-
-      .contact__item-first {
-        margin-top: 20px;
-        border-top: 2px solid var(--colour-border);
-        border-bottom: 2px solid var(--colour-border);
-      }
+      margin-top: 20px;
 
       .contact__item-last_mobile {
       }
@@ -485,12 +490,9 @@
       gap: 10px;
     }
 
-    form {
-      border-top: 2px solid var(--colour-border);
-    }
-
     fieldset {
       border: none;
+      padding-block: 0;
     }
 
     .input-titles {
@@ -499,16 +501,25 @@
       font-size: var(--font-size-contact-form-field-title);
       font-weight: 400;
 
-      @media (width >= calc(1260 / 16 * 1rem)) {
-        padding-block: 16px 6px;
+      @media (width >= calc(600 / 16 * 1rem)) {
+        padding-block: 18px 6px;
       }
+    }
+
+    .input-titles-first {
+      padding-block: 0px 6px;
     }
 
     .scrollbar-text {
       border: 1px solid var(--colour-border);
+      border-radius: 6px;
       width: auto;
-      height: 500px; /* TEMPORARY, calculate the height based on the form or manage the grid */
+      height: 500px;
       overflow: scroll;
+
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        height: 600px;
+      }
     }
 
     .input_text-field {
@@ -602,7 +613,9 @@
 
   .hidden-on-desktop {
     display: block;
+    padding-bottom: 24px;
     @media (width >= calc(1260 / 16 * 1rem)) {
+      padding-bottom: 0px;
       display: none;
     }
   }
@@ -611,6 +624,7 @@
     display: none;
     @media (width >= calc(1260 / 16 * 1rem)) {
       display: block;
+      padding-top: 18px;
     }
   }
 }

@@ -45,6 +45,7 @@
     --font-size-project-subtitle: var(--fs-16px);
     --font-size-project-tags: var(--fs-12px);
     --font-size-body-text: var(--fs-16px);
+    --font-size-email-address: var(--fs-18px);
     --font-size-contact-form-field-title: var(--fs-14px);
     --font-size-contact-form-field-input: var(--fs-14px);
     --font-size-privacy-policy-h1: var(--fs-14px);
@@ -61,6 +62,7 @@
       --font-size-project-subtitle: var(--fs-22px);
       --font-size-project-tags: var(--fs-18px);
       --font-size-body-text: var(--fs-20px);
+      --font-size-email-address: var(--fs-24px);
       --font-size-contact-form-field-title: var(--fs-20px);
       --font-size-contact-form-field-input: var(--fs-20px);
       --font-size-privacy-policy-h1: var(--fs-18px);
@@ -416,6 +418,7 @@
     }
   }
 
+  /* About Section */
   .about {
     .about__wrapper {
     }
@@ -449,7 +452,21 @@
     }
   }
 
+  /* Contact Section */
   .contact {
+    .contact__email {
+      margin-top: 20px;
+      width: min(calc(100% - 48px), calc(1032 / 16 * 1rem));
+      margin-inline: auto;
+
+      .email-address {
+        display: block;
+        margin-block: 0.2em;
+        font-weight: 500;
+        font-size: var(--font-size-email-address);
+      }
+    }
+
     .contact__item {
       max-width: calc(500 / 16 * 1rem);
 
@@ -505,6 +522,7 @@
       border: 1px solid var(--colour-border);
       outline: none;
       box-shadow: var(--colour-border) 1px 1px 3px;
+      resize: none;
     }
 
     .input_long-text {
@@ -541,6 +559,9 @@
       }
 
       ul {
+      }
+
+      a {
       }
 
       .privacy-policy__update-date {

@@ -37,6 +37,7 @@
     --fs-24px: calc(24 / 16 * 1rem);
     --fs-26px: calc(26 / 16 * 1rem);
     --fs-30px: calc(30 / 16 * 1rem);
+    --fs-32px: calc(32 / 16 * 1rem);
     --fs-36px: calc(36 / 16 * 1rem);
     --fs-48px: calc(48 / 16 * 1rem);
 
@@ -51,7 +52,10 @@
     --font-size-email-address: var(--fs-18px);
     --font-size-contact-form-field-title: var(--fs-14px);
     --font-size-contact-form-field-input: var(--fs-14px);
-    --font-size-privacy-policy-h1: var(--fs-14px);
+    --font-size-privacy-policy-h1: var(--fs-24px);
+    --font-size-privacy-policy-h2: var(--fs-18px);
+    --font-size-privacy-policy-h3: var(--fs-16px);
+    --font-size-privacy-policy-h4: var(--fs-16px);
     --font-size-privacy-policy-text: var(--fs-14px);
     --font-size-button: var(--fs-18px);
     --font-size-footer-text: var(--fs-12px);
@@ -68,7 +72,10 @@
       --font-size-email-address: var(--fs-24px);
       --font-size-contact-form-field-title: var(--fs-20px);
       --font-size-contact-form-field-input: var(--fs-20px);
-      --font-size-privacy-policy-h1: var(--fs-18px);
+      --font-size-privacy-policy-h1: var(--fs-32px);
+      --font-size-privacy-policy-h2: var(--fs-24px);
+      --font-size-privacy-policy-h3: var(--fs-22px);
+      --font-size-privacy-policy-h4: var(--fs-20px);
       --font-size-privacy-policy-text: var(--fs-18px);
       --font-size-button: var(--fs-30px);
       --font-size-footer-text: var(--fs-18px);
@@ -86,7 +93,7 @@
     --colour-main-bg: var(--c-white);
     --colour-border: var(--c-grey-light);
     --colour-button: var(--c-black);
-
+    --colour-list: var(--c-grey-dark);
     --colour-secondary-bg: var(--c-black);
     --colour-text-dark-primary: var(--c-black);
     --colour-text-dark-secondary: var(--c-grey-dark);
@@ -457,6 +464,16 @@
 
   /* Contact Section */
   .contact {
+    a {
+      color: var(--colour-text-dark-secondary);
+      text-decoration: underline;
+      text-decoration-color: var(--colour-border);
+      transition: opacity 180ms ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
     .contact__email {
       grid-column: 1 / -1;
       max-width: 100%;
@@ -551,28 +568,67 @@
     .privacy-policy {
       text-indent: 1.5em;
 
+      h1,
+      h2 {
+        text-indent: 0.6em;
+      }
+
       h1 {
+        font-size: var(--font-size-privacy-policy-h1);
+        padding-bottom: 0.2em;
       }
 
       h2 {
+        padding-block: 1em 0.2em;
+        color: var(--colour-text-dark-primary);
+        font-size: var(--font-size-privacy-policy-h2);
+        font-weight: 600;
+        text-wrap: pretty;
       }
 
       h3 {
+        padding-block: 0.5em 0.3em;
+        font-size: var(--font-size-privacy-policy-h3);
       }
 
       h4 {
+        padding-block: 0.2em;
+        text-transform: lowercase;
+        font-variant-caps: small-caps;
+        font-size: var(--font-size-privacy-policy-h4);
+        color: var(--colour-text-dark-secondary);
       }
 
-      p {
-      }
-
-      strong {
+      p,
+      ul {
+        font-size: var(--font-size-privacy-policy-text);
       }
 
       ul {
+        list-style-type: disc;
+        text-indent: 0.1em;
+      }
+
+      li {
+        padding-bottom: 0.2em;
+
+        &::marker {
+          color: var(--colour-list);
+        }
+      }
+
+      strong {
+        font-weight: 550;
       }
 
       a {
+        color: var(--colour-text-dark-secondary);
+        text-decoration: underline;
+        text-decoration-color: var(--colour-border);
+        transition: opacity 180ms ease-in-out;
+        &:hover {
+          opacity: 0.7;
+        }
       }
 
       .privacy-policy__update-date {

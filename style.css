@@ -492,6 +492,11 @@
       grid-column: 1 / -1;
       max-width: 100%;
       border-bottom: 2px solid var(--colour-border);
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        max-width: calc(
+          100% - 1rem
+        ); /* to make the end of the line align with top elements on desktop */
+      }
     }
 
     .contact__item {
@@ -581,6 +586,7 @@
       h2 {
         padding-block: 1em 0.2em;
         color: var(--colour-text-dark-primary);
+        font-family: var(--font-secondary);
         font-size: var(--font-size-privacy-policy-h2);
         font-weight: 600;
         text-wrap: pretty;

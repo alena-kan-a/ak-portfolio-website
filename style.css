@@ -1,14 +1,10 @@
 /* List of things to fix:
-  1. Fix the padding of the section title when the screen is smaller than 1248px
-  2. Fix the length of the section title div element when the width of the column below is known
-  3. Add images, alt captions and titles to placeholders in the HTML
-  4. Make alt images for mobile and desktop versions of the website
-  5. Change header to a fixed position
-  6. Find a solution for textarea paragraphs/indents? Use javascript to indicate paragraphs with a hit of enter?
-  7. Change styles for scrollbars not only for policy but for any scrollbar globally, or, if not possible, do separately both for privacy and textarea
-  8. Find a more efficient way to calculate the height of the privacy policy scrollbar text on desktop
-  9. Change the global style for checkmarks
-  10. Turn the checkmark for "Display Privacy Policy:" into a toggle
+  1. Fix the padding of the section title when the screen is smaller than 1248px?
+  2. Make alt images for mobile and desktop versions of the website
+  3. Find a solution for textarea paragraphs/indents? Use javascript to indicate paragraphs with a hit of enter?
+  4. Find a more efficient way to calculate the height of the privacy policy scrollbar text on desktop
+  ! 5. Fix the disappearing of the privacy policy scrollbar when resizing the window
+  6. Bracket error? Line 117 Col 17
 */
 
 /* List of media queries
@@ -50,14 +46,14 @@
     --font-size-project-tags: var(--fs-12px);
     --font-size-body-text: var(--fs-16px);
     --font-size-email-address: var(--fs-18px);
-    --font-size-contact-form-field-title: var(--fs-14px);
-    --font-size-contact-form-field-input: var(--fs-14px);
+    --font-size-contact-form-field-title: var(--fs-16px);
+    --font-size-contact-form-field-input: var(--fs-16px);
     --font-size-privacy-policy-h1: var(--fs-24px);
-    --font-size-privacy-policy-h2: var(--fs-18px);
-    --font-size-privacy-policy-h3: var(--fs-16px);
-    --font-size-privacy-policy-h4: var(--fs-16px);
-    --font-size-privacy-policy-text: var(--fs-14px);
-    --font-size-button: var(--fs-18px);
+    --font-size-privacy-policy-h2: var(--fs-20px);
+    --font-size-privacy-policy-h3: var(--fs-18px);
+    --font-size-privacy-policy-h4: var(--fs-18px);
+    --font-size-privacy-policy-text: var(--fs-16px);
+    --font-size-button: var(--fs-20px);
     --font-size-footer-text: var(--fs-12px);
 
     @media (width >= calc(600 / 16 * 1rem)) {
@@ -113,6 +109,20 @@
     margin: 0;
   }
 
+  html,
+  body {
+    scroll-padding-top: 130px;
+    scroll-behavior: smooth;
+
+    @media (calc(600 / 16 * 1rem) <= width <= calc(999 / 16 * 1rem)) {
+      scroll-padding-top: 180px;
+    }
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      scroll-padding-top: 120px;
+    }
+  }
+
   body {
     min-height: 100vh;
     font-family: var(--font-primary);
@@ -124,8 +134,10 @@
   }
 
   header {
+    background-color: var(--colour-main-bg);
     padding-top: 48px;
     padding-bottom: 16px;
+    box-shadow: var(--colour-border) 0px 0px 3px;
 
     @media (width >= calc(600 / 16 * 1rem)) {
       padding-top: 32px;
@@ -430,12 +442,6 @@
 
   /* About Section */
   .about {
-    .about__wrapper {
-    }
-
-    .about__wrapper-secondary {
-    }
-
     .about__item {
       max-width: calc(500 / 16 * 1rem);
     }
@@ -448,9 +454,6 @@
       @media (width >= calc(1260 / 16 * 1rem)) {
         padding-bottom: 0;
       }
-    }
-
-    .about__photo {
     }
 
     .dropcap-paragraph {
@@ -501,150 +504,239 @@
 
     .contact__item {
       max-width: calc(500 / 16 * 1rem);
-      margin-top: 20px;
-    }
-
-    .contact-form {
-      padding-block: 6px;
-    }
-
-    .contact-form__name-items {
-      display: flex;
-      gap: 10px;
-    }
-
-    fieldset {
-      border: none;
-      padding-block: 0;
-    }
-
-    .input-titles {
-      display: block;
-      padding-block: 12px 6px;
-      font-size: var(--font-size-contact-form-field-title);
-      font-weight: 400;
-
-      @media (width >= calc(600 / 16 * 1rem)) {
-        padding-block: 18px 6px;
-      }
-    }
-
-    .input-titles-first {
-      padding-block: 0px 6px;
-    }
-
-    .scrollbar-text {
-      padding-inline: 15px;
-      padding-block: 6px;
-      border: 1px solid var(--colour-border);
-      border-radius: 6px;
-      width: auto;
-      height: 500px;
-      overflow: scroll;
+      margin-top: 10px;
 
       @media (width >= calc(1260 / 16 * 1rem)) {
-        height: 606px;
-      }
-    }
-
-    .input_text-field {
-      text-indent: 1em;
-      font-family: var(--font-primary);
-      font-weight: 300;
-      font-size: var(--font-size-contact-form-field-input);
-      width: 100%;
-      padding-block: 0.5em;
-      border-radius: 6px;
-      border: 1px solid var(--colour-border);
-      outline: none;
-      box-shadow: var(--colour-border) 1px 1px 3px;
-      resize: none;
-    }
-
-    .input_long-text {
-      height: 10em;
-      line-height: 1.5em;
-      text-indent: 0;
-      padding-left: 1em;
-    }
-
-    .submit {
-      padding-bottom: 20px;
-      border-bottom: 2px solid var(--colour-border);
-    }
-
-    .privacy-policy {
-      text-indent: 1.5em;
-
-      h1,
-      h2 {
-        text-indent: 0;
+        margin-top: 20px;
       }
 
-      h1 {
-        font-size: var(--font-size-privacy-policy-h1);
-        margin-bottom: 0.2em;
+      .contact-form {
+        padding-block: 6px;
       }
 
-      h2 {
-        margin-block: 1em 0.4em;
-        padding-block: 0.4em 0.3em;
-        padding-inline: 0.5em;
-        background-color: var(--colour-secondary-bg);
-        font-size: var(--font-size-privacy-policy-h2);
-        text-wrap: pretty;
+      .contact-form__name-items {
+        display: flex;
+        gap: 10px;
       }
 
-      h3 {
-        margin-block: 0.5em 0.3em;
-        font-size: var(--font-size-privacy-policy-h3);
-        text-indent: 0.6em;
+      fieldset {
+        border: none;
+        padding-block: 0;
       }
 
-      h4 {
-        margin-block: 0.2em;
-        text-transform: lowercase;
-        font-variant-caps: small-caps;
-        font-size: var(--font-size-privacy-policy-h4);
-        color: var(--colour-text-dark-primary);
-      }
+      .input-titles {
+        display: block;
+        padding-block: 12px 6px;
+        font-size: var(--font-size-contact-form-field-title);
+        font-weight: 400;
 
-      p,
-      ul {
-        font-size: var(--font-size-privacy-policy-text);
-      }
-
-      ul {
-        list-style-type: disc;
-        text-indent: 0.1em;
-      }
-
-      li {
-        padding-bottom: 0.2em;
-
-        &::marker {
-          color: var(--colour-list);
+        @media (width >= calc(600 / 16 * 1rem)) {
+          padding-block: 18px 6px;
         }
       }
 
-      strong {
-        font-weight: 550;
+      .input-titles-first {
+        padding-block: 0px 6px;
       }
 
-      a {
-        color: var(--colour-text-dark-secondary);
-        text-decoration: underline;
-        text-decoration-color: var(--colour-border);
-        transition: opacity 180ms ease-in-out;
-        &:hover {
-          opacity: 0.7;
+      .scrollbar-text {
+        padding-inline: 15px;
+        padding-block: 6px;
+        border: 1px solid var(--colour-border);
+        border-radius: 6px;
+        width: auto;
+        height: 500px;
+        overflow: scroll;
+
+        @media (width >= calc(1260 / 16 * 1rem)) {
+          height: 606px;
         }
       }
 
-      .privacy-policy__update-date {
+      .input_text-field {
+        text-indent: 1em;
         font-family: var(--font-primary);
-        font-style: italic;
-        padding-block: 0.8em 1em;
+        font-weight: 300;
+        font-size: var(--font-size-contact-form-field-input);
+        width: 100%;
+        padding-block: 0.5em;
+        border-radius: 6px;
+        border: 1px solid var(--colour-border);
+        outline: none;
+        box-shadow: var(--colour-border) 1px 1px 3px;
+        resize: none;
+      }
+
+      .input_long-text {
+        height: 10em;
+        line-height: 1.5em;
+        text-indent: 0;
+        padding-left: 1em;
+      }
+
+      .submit {
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--colour-border);
+      }
+
+      .privacy-policy {
+        text-indent: 1.5em;
+
+        h1,
+        h2 {
+          text-indent: 0;
+        }
+
+        h1 {
+          font-size: var(--font-size-privacy-policy-h1);
+          margin-bottom: 0.2em;
+        }
+
+        h2 {
+          margin-block: 1em 0.4em;
+          padding-block: 0.4em 0.3em;
+          padding-inline: 0.5em;
+          background-color: var(--colour-secondary-bg);
+          font-size: var(--font-size-privacy-policy-h2);
+          font-weight: 400;
+          text-wrap: pretty;
+        }
+
+        h3 {
+          margin-block: 0.5em 0.3em;
+          font-size: var(--font-size-privacy-policy-h3);
+          text-indent: 0.6em;
+        }
+
+        h4 {
+          margin-block: 0.2em;
+          text-transform: lowercase;
+          font-variant-caps: small-caps;
+          font-size: var(--font-size-privacy-policy-h4);
+          color: var(--colour-text-dark-primary);
+        }
+
+        p,
+        ul {
+          font-size: var(--font-size-privacy-policy-text);
+        }
+
+        ul {
+          list-style-type: disc;
+          text-indent: 0.1em;
+        }
+
+        li {
+          padding-bottom: 0.2em;
+
+          &::marker {
+            color: var(--colour-list);
+          }
+        }
+
+        strong {
+          font-weight: 550;
+        }
+
+        a {
+          color: var(--colour-text-dark-secondary);
+          text-decoration: underline;
+          text-decoration-color: var(--colour-border);
+          transition: opacity 180ms ease-in-out;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .privacy-policy__update-date {
+          font-family: var(--font-primary);
+          font-style: italic;
+          padding-block: 0.8em 1em;
+        }
+      }
+
+      .toggle-button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        .toggle-button {
+          position: relative;
+          display: inline-block;
+          width: 36px;
+          height: 20px;
+
+          @media (width >= calc(600 / 16 * 1rem)) {
+            width: 48px;
+            height: 26px;
+          }
+        }
+
+        .toggle-button input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .toggle-button__slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 34px;
+          background-color: var(--colour-border);
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+
+        .toggle-button__slider:before {
+          position: absolute;
+          content: "";
+          height: 13px;
+          width: 13px;
+          left: 4px;
+          bottom: 4px;
+          border-radius: 50%;
+          background-color: white;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+
+          @media (width >= calc(600 / 16 * 1rem)) {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        input:checked + .toggle-button__slider {
+          background-color: var(--c-grey-dark);
+        }
+
+        input:focus + .toggle-button__slider {
+          box-shadow: 0 0 1px var(--c-grey-dark);
+        }
+
+        input:checked + .toggle-button__slider:before {
+          -webkit-transform: translateX(15px);
+          -ms-transform: translateX(15px);
+          transform: translateX(15px);
+
+          @media (width >= calc(600 / 16 * 1rem)) {
+            -webkit-transform: translateX(21px);
+            -ms-transform: translateX(21px);
+            transform: translateX(21px);
+          }
+        }
+      }
+
+      #privacyScrollbar {
+        display: none;
+
+        @media (width >= calc(1260 / 16 * 1rem)) {
+          display: block;
+        }
       }
     }
   }
@@ -665,32 +757,54 @@
       }
     }
   }
-}
 
-@layer utility {
-  .visually-hidden {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
+  @layer utility {
+    .ease-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
-  .hidden-on-desktop {
-    display: block;
-    padding-bottom: 24px;
-    @media (width >= calc(1260 / 16 * 1rem)) {
-      padding-bottom: 0px;
+    .ease-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 800ms cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .hidden-on-desktop {
+      display: block;
+      padding-bottom: 12px;
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        padding-bottom: 0px;
+        display: none;
+      }
+    }
+
+    .hidden-on-mobile {
+      display: none;
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        display: block;
+        padding-top: 18px;
+      }
+    }
+
+    .hidden {
       display: none;
     }
-  }
 
-  .hidden-on-mobile {
-    display: none;
-    @media (width >= calc(1260 / 16 * 1rem)) {
-      display: block;
-      padding-top: 18px;
+    .sticky {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      overflow: hidden;
     }
   }
 }

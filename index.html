@@ -15,9 +15,9 @@
   </head>
 
   <body>
-    <header class="topnav">
+    <header class="topnav sticky">
       <h2 class="visually-hidden">Header</h2>
-      <div class="wrapper topnav__wrapper">
+      <div class="wrapper topnav__wrapper sticky-nav">
         <div class="topnav__title-and-lang">
           <a href="/" class="topnav__homelink"
             ><h1>Alena&nbspKandazhenka</h1>
@@ -59,7 +59,7 @@
           <div class="section-title">
             <h2>Works</h2></div>
             <div class="wrapper-secondary works__wrapper-secondary">
-              <div class="works__item">
+              <div class="works__item ease-in">
                 <a
                   href="projects/illustrations-for-matcha-sweets-packaging.html"
                   class="works__project-link"
@@ -81,7 +81,7 @@
                   Illustration, Print, Packaging
                 </p>
               </div>
-              <div class="works__item">
+              <div class="works__item ease-in">
                 <a
                   href="projects/business-cards-for-a-game-designer.html"
                   class="works__project-link"
@@ -102,7 +102,7 @@
                   Graphic Design, Print, Stationery
                 </p>
               </div>
-              <div class="works__item">
+              <div class="works__item ease-in">
                 <a
                   href="projects/dark-fantasy-game-advertising-flyer.html"
                   class="works__project-link"
@@ -124,7 +124,7 @@
                   Graphic Design, Print, Advertising Materials
                 </p>
               </div>
-              <div class="works__item">
+              <div class="works__item ease-in">
                 <a
                   href="projects/collection-of-floral-patterns.html"
                   class="works__project-link"
@@ -146,7 +146,7 @@
                   Surface Design, Illustration, Print
                 </p>
               </div>
-                          <div class="works__more">
+                          <div class="works__more ease-in">
               <a href="/projects/" class="works__more-link"><h3>See more &#8640;</h3></a>
             </div>
             </div>
@@ -161,7 +161,7 @@
             <h2>About</h2>
           </div>
           <div class="wrapper-secondary about__wrapper-secondary">
-            <div class="about__item about__paragraph">
+            <div class="about__item about__paragraph ease-in">
 <p class="dropcap-paragraph">M<span class="small-caps"
                   >y name is Alena
                   Kandazhenka</span
@@ -191,7 +191,7 @@
                 forward to new opportunities and connections.
               </p>
             </div>
-            <div class="about__item about__photo">
+            <div class="about__item about__photo ease-in">
               <img
                 src="img/alena-photo_gray-square.png"
                 alt="professional woman smiling"
@@ -210,7 +210,7 @@
           </div>
           <div class="wrapper-secondary contact__wrapper-secondary">
                         <div class="contact__border-bottom"></div>
-            <div class="contact__item"><form class="contact-form" method="post" action="https://formspree.io/f/meajpjnq">
+            <div class="contact__item ease-in"><form class="contact-form" method="post" action="https://formspree.io/f/meajpjnq">
               <fieldset>
               <p class="input-titles input-titles-first">Name:</p>
               <div class="contact-form__name-items">
@@ -266,11 +266,11 @@
                 <div class="button hidden-on-mobile">
   <button type="submit">Submit</button></div>
                 </div>
-                <div class="contact__item">
+                <div class="contact__item ease-in">
 <fieldset>
-  <div class="hidden-on-desktop"><label for="display-privacy">Display Privacy Policy: </label><input type="checkbox" id="display-privacy" name="display-privacy"></div>
-  <div class="scrollbar-text privacy-policy"><h1>Privacy Policy</h1>
-<p class="privacy-policy__update-date"><span class="privacy-policy__update-date">Last updated: August 29, 2026</span></p>
+  <div class="hidden-on-desktop"><div class="toggle-button-container"><div class="toggle-button-container__item"><span>Display Privacy Policy:</span></div> <div class="toggle-button-container__item"><label for="display-privacy" class="toggle-button"><input type="checkbox" id="display-privacy" name="display-privacy"><span class="toggle-button__slider"></span></label></div> </div></div>
+  <div class="scrollbar-text privacy-policy" id="privacyScrollbar"><h1>Privacy Policy</h1>
+<p class="privacy-policy__update-date"><span class="privacy-policy__update-date">Last updated: September 26, 2026</span></p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Contact Form and tells You about Your privacy rights and how the law protects You.</p>
 <p> This Privacy Policy describes only this Website&#8217;s Policy. This form is also using a service provided by <a href="https://formspree.io/" target="_blank">Formspree</a>. To check the Privacy Policy of Formspree, please see <a href="https://formspree.io/legal/privacy-policy/" target="_blank">this link</a>.</p>
 <p>We use Your Personal Data to provide and improve the Service. We collect, use, and disclose Your information as described in this Privacy Policy and, where required by applicable law, only where we have a valid legal basis to do so, including Your consent (where consent is required). </p>
@@ -447,7 +447,7 @@
 </div>
 </fieldset>
                 </div>
-                <div class="contact__item contact__item-last_mobile"><div class="button hidden-on-desktop"><button type="submit">Submit</button></div>
+                <div class="contact__item contact__item-last_mobile ease-in"><div class="button hidden-on-desktop"><button type="submit">Submit</button></div>
               </div>
             </form>
             <div class="contact__border-bottom"></div>
@@ -460,13 +460,14 @@
       <h2 class="visually-hidden">Footer</h2>
       <div class="wrapper">
         <div class="footer">
-      <div class="footer__item"><p>&#169; 2026 Alena Kandazhenka</p>
+      <div class="footer__item ease-in"><p>&#169; 2026 Alena Kandazhenka</p>
       <p>Graphic Designer &amp; Illustrator</p>
       <p>Tokyo, Japan</p></div>
-      <div class="footer__item">
+      <div class="footer__item ease-in">
             <p>hello@alena-kandazhenka.com</p></div>
       </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

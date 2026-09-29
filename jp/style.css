@@ -41,6 +41,7 @@
     --fs-22px: calc(22 / 16 * 1rem);
     --fs-24px: calc(24 / 16 * 1rem);
     --fs-26px: calc(26 / 16 * 1rem);
+    --fs-28px: calc(28 / 16 * 1rem);
     --fs-30px: calc(30 / 16 * 1rem);
     --fs-32px: calc(32 / 16 * 1rem);
     --fs-36px: calc(36 / 16 * 1rem);
@@ -57,14 +58,13 @@
     --font-size-body-text: var(--fs-16px);
     --font-size-body-text-jp: var(--fs-14px);
     --font-size-email-address: var(--fs-18px);
-    --font-size-contact-form-field-title: var(--fs-16px);
-    --font-size-contact-form-field-input: var(--fs-16px);
-    --font-size-privacy-policy-h1: var(--fs-24px);
-    --font-size-privacy-policy-h2: var(--fs-20px);
-    --font-size-privacy-policy-h3: var(--fs-18px);
-    --font-size-privacy-policy-h4: var(--fs-18px);
-    --font-size-privacy-policy-text: var(--fs-16px);
-    --font-size-button: var(--fs-20px);
+    --font-size-contact-form-field-title: var(--fs-14px);
+    --font-size-contact-form-field-input: var(--fs-14px);
+    --font-size-privacy-policy-h1: var(--fs-20px);
+    --font-size-privacy-policy-h2: var(--fs-16px);
+    --font-size-privacy-policy-text: var(--fs-14px);
+    --font-size-privacy-policy-text-eng: var(--fs-16px);
+    --font-size-button: var(--fs-16px);
     --font-size-footer-text: var(--fs-12px);
 
     @media (width >= calc(600 / 16 * 1rem)) {
@@ -79,14 +79,13 @@
       --font-size-body-text: var(--fs-20px);
       --font-size-body-text-jp: var(--fs-16px);
       --font-size-email-address: var(--fs-24px);
-      --font-size-contact-form-field-title: var(--fs-20px);
-      --font-size-contact-form-field-input: var(--fs-20px);
-      --font-size-privacy-policy-h1: var(--fs-32px);
-      --font-size-privacy-policy-h2: var(--fs-24px);
-      --font-size-privacy-policy-h3: var(--fs-22px);
-      --font-size-privacy-policy-h4: var(--fs-20px);
-      --font-size-privacy-policy-text: var(--fs-18px);
-      --font-size-button: var(--fs-30px);
+      --font-size-contact-form-field-title: var(--fs-18px);
+      --font-size-contact-form-field-input: var(--fs-18px);
+      --font-size-privacy-policy-h1: var(--fs-28px);
+      --font-size-privacy-policy-h2: var(--fs-20px);
+      --font-size-privacy-policy-text: var(--fs-16px);
+      --font-size-privacy-policy-text-eng: var(--fs-18px);
+      --font-size-button: var(--fs-24px);
       --font-size-footer-text: var(--fs-18px);
     }
   }
@@ -109,6 +108,7 @@
     --colour-text-light: var(--c-white);
     --colour-text-tags: var(--c-grey-midtone);
     --colour-text-placeholder: var(--c-grey-midtone);
+    --colour-text-update-date: var(--c-grey-midtone);
   }
 
   /* Reset */
@@ -251,11 +251,12 @@
 
 @layer component {
   button {
+    cursor: pointer;
     background-color: var(--colour-button);
     width: 100%;
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary-jp);
     font-size: var(--font-size-button);
-    font-weight: 400;
+    font-weight: 500;
     text-transform: lowercase;
     font-variant-caps: small-caps;
     color: var(--colour-text-light);
@@ -427,7 +428,7 @@
 
     .works__project-title {
       display: block;
-      padding-block: 0.3rem 0.5rem;
+      padding-block: 0.5rem 0.5rem;
     }
 
     .works__project-industry {
@@ -496,6 +497,10 @@
       }
     }
 
+    .text-body-eng {
+      font-size: var(--font-size-body-text);
+    }
+
     .contact__email {
       grid-column: 1 / -1;
       max-width: 100%;
@@ -546,8 +551,9 @@
       .input-titles {
         display: block;
         padding-block: 12px 6px;
+        font-family: var(--font-secondary-jp);
         font-size: var(--font-size-contact-form-field-title);
-        font-weight: 400;
+        font-weight: 500;
 
         @media (width >= calc(600 / 16 * 1rem)) {
           padding-block: 18px 6px;
@@ -556,6 +562,10 @@
 
       .input-titles-first {
         padding-block: 0px 6px;
+      }
+
+      .fake-label {
+        padding-block: 18px 6px;
       }
 
       .scrollbar-text {
@@ -568,13 +578,13 @@
         overflow: scroll;
 
         @media (width >= calc(1260 / 16 * 1rem)) {
-          height: 606px;
+          height: 678px;
         }
       }
 
       .input_text-field {
         text-indent: 1em;
-        font-family: var(--font-primary);
+        font-family: var(--font-primary-jp);
         font-weight: 300;
         font-size: var(--font-size-contact-form-field-input);
         width: 100%;
@@ -598,41 +608,29 @@
         border-bottom: 2px solid var(--colour-border);
       }
 
-      .privacy-policy {
-        text-indent: 1.5em;
+      .contact-form__privacy-agreement-fieldset {
+        font-family: var(--font-primary-jp);
+        font-weight: 300;
+        font-size: var(--font-size-contact-form-field-input);
+      }
 
-        h1,
-        h2 {
-          text-indent: 0;
-        }
+      .privacy-policy {
+        text-indent: 0;
 
         h1 {
           font-size: var(--font-size-privacy-policy-h1);
-          margin-bottom: 0.2em;
+          margin-bottom: 0.5em;
         }
 
         h2 {
           margin-block: 1em 0.4em;
-          padding-block: 0.4em 0.3em;
+          padding-block: 0.6em;
           padding-inline: 0.5em;
           background-color: var(--colour-secondary-bg);
+          font-family: var(--font-secondary-jp);
           font-size: var(--font-size-privacy-policy-h2);
-          font-weight: 400;
+          font-weight: 500;
           text-wrap: pretty;
-        }
-
-        h3 {
-          margin-block: 0.5em 0.3em;
-          font-size: var(--font-size-privacy-policy-h3);
-          text-indent: 0.6em;
-        }
-
-        h4 {
-          margin-block: 0.2em;
-          text-transform: lowercase;
-          font-variant-caps: small-caps;
-          font-size: var(--font-size-privacy-policy-h4);
-          color: var(--colour-text-dark-primary);
         }
 
         p,
@@ -643,18 +641,17 @@
         ul {
           list-style-type: disc;
           text-indent: 0.1em;
+
+          li {
+            &::marker {
+              color: var(--colour-list);
+              content: "・";
+            }
+          }
         }
 
         li {
           padding-bottom: 0.2em;
-
-          &::marker {
-            color: var(--colour-list);
-          }
-        }
-
-        strong {
-          font-weight: 550;
         }
 
         a {
@@ -668,9 +665,22 @@
         }
 
         .privacy-policy__update-date {
-          font-family: var(--font-primary);
-          font-style: italic;
-          padding-block: 0.8em 1em;
+          font-family: var(--font-primary-jp);
+          font-weight: 400;
+          color: var(--colour-text-update-date);
+          padding-block: 0.8em 1.2em;
+        }
+
+        .text-body-eng {
+          font-size: var(--font-size-privacy-policy-text-eng);
+        }
+
+        .contact-info {
+          padding-left: 1.2em;
+
+          p {
+            padding-block: 0em;
+          }
         }
       }
 
@@ -757,6 +767,9 @@
           display: block;
         }
       }
+    }
+    .text-body-eng {
+      font-family: var(--font-primary);
     }
   }
 

@@ -24,9 +24,27 @@ const privacy = document.getElementById("privacyScrollbar");
 const toggleCheckbox = document.getElementById("display-privacy");
 
 toggleCheckbox.addEventListener("change", function () {
+  console.log("Checkbox changed:", this.checked);
   if (this.checked) {
     privacy.style.display = "block";
   } else {
     privacy.style.display = "none";
   }
+});
+
+function screenDesktopSize(x) {
+  if (x.matches) {
+    // If media query matches
+    privacy.style.display = "block";
+  } else {
+    privacy.style.display = "none";
+  }
+}
+
+// Create a MediaQueryList object
+var x = window.matchMedia("(min-width: calc(1260 / 16 * 1rem))");
+
+// Attach listener function on state changes
+x.addEventListener("change", function () {
+  screenDesktopSize(x);
 });

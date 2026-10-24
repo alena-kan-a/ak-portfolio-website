@@ -1,0 +1,226 @@
+@import url("/fonts/css/shippori-mincho-b1.css");
+@import url("/fonts/css/noto-sans-jp.css");
+
+@layer global {
+  /* Fonts */
+  :root {
+    --font-primary-jp:
+      "Shippori Mincho B1", "游明朝 Medium", "Yu Mincho Medium",
+      "YuMincho Medium", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", serif;
+    --font-secondary-jp:
+      "Noto Sans JP", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体",
+      YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ,
+      Meiryo, sans-serif;
+
+    --font-size-h3-jp: var(--fs-16px);
+    --font-size-body-text-jp: var(--fs-14px);
+    --font-size-contact-form-field-title: var(--fs-14px);
+    --font-size-contact-form-field-input: var(--fs-14px);
+    --font-size-privacy-policy-h1: var(--fs-20px);
+    --font-size-privacy-policy-h2: var(--fs-16px);
+    --font-size-privacy-policy-text: var(--fs-14px);
+    --font-size-privacy-policy-text-eng: var(--fs-16px);
+    --font-size-button: var(--fs-16px);
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      --font-size-h3-jp: var(--fs-20px);
+      --font-size-body-text-jp: var(--fs-16px);
+      --font-size-contact-form-field-title: var(--fs-18px);
+      --font-size-contact-form-field-input: var(--fs-18px);
+      --font-size-privacy-policy-h1: var(--fs-28px);
+      --font-size-privacy-policy-h2: var(--fs-20px);
+      --font-size-privacy-policy-text: var(--fs-16px);
+      --font-size-privacy-policy-text-eng: var(--fs-18px);
+      --font-size-button: var(--fs-24px);
+    }
+  }
+
+  h3 {
+    font-size: var(--font-size-h3-jp);
+    font-weight: 550;
+    font-family: var(--font-secondary-jp);
+    font-weight: 900;
+    font-kerning: normal;
+    letter-spacing: 0%;
+    color: var(--colour-text-dark-primary);
+  }
+
+  .jp-body-text {
+    font-family: var(--font-primary-jp);
+    font-size: var(--font-size-body-text-jp);
+    padding-bottom: 2rem;
+    text-indent: 0;
+    line-height: 1.6em;
+    letter-spacing: 0.02em;
+
+    p {
+      padding-bottom: 0.8em;
+    }
+  }
+}
+
+@layer component {
+  button {
+    font-family: var(--font-secondary-jp);
+    font-size: var(--font-size-button);
+    font-weight: 500;
+  }
+
+  /* Works Section */
+  .works {
+    .works__project-title {
+      display: block;
+      padding-block: 0.7rem;
+    }
+
+    .works__more {
+      h3 {
+        font-size: var(--font-size-h3);
+        font-family: var(--font-secondary);
+        font-weight: 600;
+      }
+    }
+  }
+
+  /* About Section - no particular styles in jp version */
+
+  /* Contact Section */
+  .contact {
+    .text-body-eng {
+      font-size: var(--font-size-body-text);
+    }
+
+    .contact__email {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      border-bottom: 2px solid var(--colour-border);
+      padding-bottom: 20px;
+
+      .email-address {
+        display: block;
+        margin-block: 0.2em;
+        font-weight: 500;
+        font-size: var(--font-size-email-address);
+      }
+    }
+
+    .contact__item {
+      .input-titles {
+        font-family: var(--font-secondary-jp);
+        font-size: var(--font-size-contact-form-field-title);
+        font-weight: 500;
+        margin-bottom: 0.2em;
+      }
+
+      .contact-form {
+        padding-block: 0 6px;
+      }
+
+      .fake-label {
+        padding-block: 18px 6px;
+      }
+
+      .scrollbar-text {
+        @media (width >= calc(1260 / 16 * 1rem)) {
+          height: 685px;
+        }
+      }
+
+      .input_text-field {
+        font-family: var(--font-primary-jp);
+      }
+
+      .contact-form__privacy-agreement-fieldset {
+        font-family: var(--font-primary-jp);
+        font-weight: 300;
+        font-size: var(--font-size-contact-form-field-input);
+
+        legend {
+          margin-bottom: 0.2em;
+        }
+      }
+
+      .privacy-policy {
+        text-indent: 0;
+
+        h1 {
+          font-size: var(--font-size-privacy-policy-h1);
+          margin-block: 0.5em;
+        }
+
+        h2 {
+          margin-block: 1em 0.4em;
+          padding-block: 0.6em;
+          padding-inline: 0.5em;
+          background-color: var(--colour-secondary-bg);
+          font-family: var(--font-secondary-jp);
+          font-size: var(--font-size-privacy-policy-h2);
+          font-weight: 500;
+          text-wrap: pretty;
+        }
+
+        p,
+        ul {
+          font-size: var(--font-size-privacy-policy-text);
+        }
+
+        ul {
+          list-style-type: disc;
+          text-indent: 0.1em;
+
+          li {
+            &::marker {
+              color: var(--colour-list);
+              content: "・";
+            }
+          }
+        }
+
+        li {
+          padding-bottom: 0.2em;
+        }
+
+        a {
+          color: var(--colour-text-dark-secondary);
+          text-decoration: underline;
+          text-decoration-color: var(--colour-border);
+          transition: opacity 180ms ease-in-out;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .privacy-policy__update-date {
+          font-family: var(--font-primary-jp);
+          font-weight: 400;
+          font-style: normal;
+          color: var(--colour-text-dark-secondary);
+          padding-block: 0.8em 1.2em;
+        }
+
+        .text-body-eng {
+          font-size: var(--font-size-privacy-policy-text-eng);
+        }
+
+        .contact-info {
+          padding-left: 1.2em;
+
+          p {
+            padding-block: 0em;
+          }
+        }
+      }
+
+      #privacyScrollbar {
+        display: none;
+
+        @media (width >= calc(1260 / 16 * 1rem)) {
+          display: block;
+        }
+      }
+    }
+    .text-body-eng {
+      font-family: var(--font-primary);
+    }
+  }
+}

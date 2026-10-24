@@ -1,0 +1,49 @@
+@layer utility {
+  .ease-in {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .ease-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 800ms cubic-bezier(0.5, 0, 0, 1);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .hidden-on-desktop {
+    display: block;
+    padding-bottom: 12px;
+    @media (width >= calc(1260 / 16 * 1rem)) {
+      padding-bottom: 0px;
+      display: none;
+    }
+  }
+
+  .hidden-on-mobile {
+    display: none;
+    @media (width >= calc(1260 / 16 * 1rem)) {
+      display: block;
+      padding-top: 18px;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+  }
+}

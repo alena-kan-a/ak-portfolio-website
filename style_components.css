@@ -58,7 +58,7 @@
 
       @media (width >= calc(1000 / 16 * 1rem)) {
         gap: 2rem;
-        padding-bottom: 0.3rem; /* added to fix the baseline alignment issue between different fonts */
+        padding-bottom: 0.1rem; /* added to fix the baseline alignment issue between different fonts */
       }
     }
 
@@ -88,6 +88,10 @@
     /* Child 2 of Parent 2.1; Parent 3 */
     .topnav__language {
       gap: 1rem;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        padding-bottom: 0.1rem; /* added to fix the baseline alignment issue between different fonts */
+      }
     }
 
     /* Children of Parent 3 */

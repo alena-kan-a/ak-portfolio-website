@@ -1,0 +1,51 @@
+@layer global {
+  h2 {
+    margin-top: 20px;
+    font-size: var(--font-size-h2);
+    font-weight: 770;
+    font-family: var(--font-secondary);
+    font-variant-caps: small-caps;
+    font-kerning: normal;
+    letter-spacing: -1%;
+    color: var(--colour-text-dark-primary);
+  }
+}
+
+@layer components {
+  .project {
+    padding-bottom: 1rem;
+
+    .project__item {
+      max-width: calc(500 / 16 * 1rem);
+      padding-bottom: 2rem;
+    }
+
+    .project-description {
+      padding-left: 2rem;
+
+      .project-description__item {
+        padding-bottom: 1rem;
+      }
+    }
+
+    .project__back {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      border-top: 2px solid var(--colour-border);
+      padding-top: 0.3rem;
+
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        max-width: calc(
+          100% - 1rem
+        ); /* to make the end of the line align with top elements on desktop */
+      }
+    }
+
+    .project__back-link {
+      transition: opacity 180ms ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

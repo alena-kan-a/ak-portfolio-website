@@ -1,13 +1,11 @@
 /* List of things to fix:
   1. Make alt images for mobile and desktop versions of the website
   2. Convert the images to webp
-  4. Fixes for vertical:
-    - increase the bottom paddings
 */
 
 @layer global {
   h2 {
-    margin-top: 20px;
+    padding-block: 1.5rem;
     font-size: var(--font-size-h2);
     font-weight: 770;
     font-family: var(--font-secondary);
@@ -15,6 +13,10 @@
     font-kerning: normal;
     letter-spacing: -1%;
     color: var(--colour-text-dark-primary);
+  }
+
+  .wrapper-secondary {
+    padding-block: 0;
   }
 }
 
@@ -65,7 +67,7 @@
       max-width: 100%;
       border-top: 2px solid var(--colour-border);
       padding-top: 0.3rem;
-      margin-top: 2rem;
+      margin-block: 2rem;
 
       @media (width >= calc(1260 / 16 * 1rem)) {
         max-width: calc(

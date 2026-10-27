@@ -214,7 +214,7 @@
   .wrapper-secondary {
     width: min(calc(100% - 48px), calc(1032 / 16 * 1rem));
     margin-inline: auto;
-    margin-block: 2rem;
+    padding-block: 2rem;
     display: grid;
     justify-content: center;
 

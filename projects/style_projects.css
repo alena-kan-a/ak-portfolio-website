@@ -1,3 +1,10 @@
+/* List of things to fix:
+  1. Make alt images for mobile and desktop versions of the website
+  2. Convert the images to webp
+  4. Fixes for vertical:
+    - increase the bottom paddings
+*/
+
 @layer global {
   h2 {
     margin-top: 20px;
@@ -17,14 +24,39 @@
 
     .project__item {
       max-width: calc(500 / 16 * 1rem);
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
     }
 
     .project-description {
-      padding-left: 2rem;
+      padding-block: 0.5rem 0.3rem;
+
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        padding-left: 2rem;
+        padding-block: 0;
+      }
 
       .project-description__item {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
+
+        @media (width >= calc(1260 / 16 * 1rem)) {
+          padding-bottom: 1rem;
+        }
+      }
+
+      .cancel-padding {
+        padding-bottom: 0;
+      }
+    }
+
+    .project__item__max-width {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      padding-top: 0.3rem;
+
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        max-width: calc(
+          100% - 1rem
+        ); /* to make the end of the line align with top elements on desktop */
       }
     }
 
@@ -33,11 +65,24 @@
       max-width: 100%;
       border-top: 2px solid var(--colour-border);
       padding-top: 0.3rem;
+      margin-top: 2rem;
 
       @media (width >= calc(1260 / 16 * 1rem)) {
         max-width: calc(
           100% - 1rem
         ); /* to make the end of the line align with top elements on desktop */
+      }
+
+      .back__flex-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @media (width >= calc(400 / 16 * 1rem)) {
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 0;
+        }
       }
     }
 

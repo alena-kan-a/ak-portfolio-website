@@ -1,11 +1,10 @@
 /* List of things to fix:
   1. Make alt images for mobile and desktop versions of the website
   2. Find a more efficient way to calculate the height of the privacy policy scrollbar text on desktop
-  3. email encryption??
+  3. Write alt text for images in Japanese
   4. Convert the images to webp
-  5. script.js is loaded twice, remove the bottom inclusion of script.js
-  6. some links are not in absolute path (in JP folder for exemple : href="projects/...")
-  7. instead of loading the fonts with import, load them directly in the page header
+  6. break down the js script to avoid errors on pages without the scrollbar field?
+  8. instead of loading the fonts with import, load them directly in the page header
 */
 
 /* List of media queries

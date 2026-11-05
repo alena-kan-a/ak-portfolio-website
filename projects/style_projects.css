@@ -90,4 +90,9 @@
       }
     }
   }
+
+  .photo-credit {
+    color: var(--colour-text-dark-secondary);
+    font-size: var(--font-size-photo-credit);
+  }
 }

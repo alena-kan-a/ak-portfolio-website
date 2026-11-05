@@ -59,6 +59,7 @@
     --font-size-privacy-policy-text: var(--fs-16px);
     --font-size-button: var(--fs-20px);
     --font-size-footer-text: var(--fs-12px);
+    --font-size-photo-credit: var(--fs-12px);
 
     @media (width >= calc(600 / 16 * 1rem)) {
       --font-size-h1: var(--fs-48px);
@@ -79,6 +80,7 @@
       --font-size-privacy-policy-text: var(--fs-18px);
       --font-size-button: var(--fs-30px);
       --font-size-footer-text: var(--fs-18px);
+      --font-size-photo-credit: var(--fs-16px);
     }
   }
 

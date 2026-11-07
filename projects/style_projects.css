@@ -8,6 +8,7 @@
     font-kerning: normal;
     letter-spacing: -1%;
     color: var(--colour-text-dark-primary);
+    line-height: 1;
   }
 
   .wrapper-secondary {

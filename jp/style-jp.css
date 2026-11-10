@@ -12,8 +12,12 @@
       YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ,
       Meiryo, sans-serif;
 
+    --font-size-h2-jp: var(--fs-20px);
+    --font-size-h2-eng: var(--fs-28px);
     --font-size-h3-jp: var(--fs-16px);
+    --font-size-h3-eng: var(--fs-22px);
     --font-size-body-text-jp: var(--fs-14px);
+    --font-size-body-text-eng: var(--fs-17px);
     --font-size-contact-form-field-title: var(--fs-14px);
     --font-size-contact-form-field-input: var(--fs-14px);
     --font-size-privacy-policy-h1: var(--fs-20px);
@@ -23,8 +27,12 @@
     --font-size-button: var(--fs-16px);
 
     @media (width >= calc(600 / 16 * 1rem)) {
+      --font-size-h2-jp: var(--fs-28px);
+      --font-size-h2-eng: var(--fs-38px);
       --font-size-h3-jp: var(--fs-20px);
+      --font-size-h3-eng: var(--fs-28px);
       --font-size-body-text-jp: var(--fs-16px);
+      --font-size-body-text-eng: var(--fs-19px);
       --font-size-contact-form-field-title: var(--fs-18px);
       --font-size-contact-form-field-input: var(--fs-18px);
       --font-size-privacy-policy-h1: var(--fs-28px);
@@ -67,18 +75,24 @@
   }
 
   /* Works Section */
-  .works {
-    .works__project-title {
-      display: block;
-      padding-block: 0.7rem;
-    }
 
-    .works__more {
-      h3 {
-        font-size: var(--font-size-h3);
-        font-family: var(--font-secondary);
-        font-weight: 600;
-      }
+  .works__project-title_jp {
+    display: block;
+    padding-block: 0.7rem 0.65rem;
+  }
+
+  .works__project-title_eng {
+    font-size: var(--font-size-h3-eng);
+    font-family: var(--font-secondary);
+    font-weight: 680;
+    /* !if this is included in a title, put .works__project-title class for h3, not .works__project-title_jp */
+  }
+
+  .works__more {
+    h3 {
+      font-size: var(--font-size-h3);
+      font-family: var(--font-secondary);
+      font-weight: 600;
     }
   }
 
@@ -221,6 +235,47 @@
     }
     .text-body-eng {
       font-family: var(--font-primary);
+    }
+  }
+
+  /* Project pages styling */
+
+  .h2-project-name-jp {
+    font-family: var(--font-secondary-jp);
+    font-size: var(--font-size-h2-jp);
+    font-weight: 900;
+    padding-block: 1.5rem;
+  }
+
+  .h2-project-name-eng {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-h2-eng);
+    font-weight: 700;
+  }
+
+  .project-description__jp-body {
+    font-family: var(--font-primary-jp);
+    font-size: var(--font-size-body-text-jp);
+    padding-block: 0;
+    text-indent: 0;
+    line-height: 1.7em;
+    letter-spacing: 0.03em;
+
+    p {
+      padding-bottom: 0.8em;
+    }
+
+    .project-description__jp-body__en-words {
+      font-family: var(--font-primary);
+      font-size: var(--font-size-body-text-eng);
+    }
+  }
+
+  .project__back-link {
+    h3 {
+      font-size: var(--font-size-h3);
+      font-family: var(--font-secondary);
+      font-weight: 600;
     }
   }
 }

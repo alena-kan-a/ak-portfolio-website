@@ -30,7 +30,9 @@
     --fs-12px: calc(12 / 16 * 1rem);
     --fs-14px: calc(14 / 16 * 1rem);
     --fs-16px: calc(16 / 16 * 1rem);
+    --fs-17px: calc(17 / 16 * 1rem);
     --fs-18px: calc(18 / 16 * 1rem);
+    --fs-19px: calc(19 / 16 * 1rem);
     --fs-20px: calc(20 / 16 * 1rem);
     --fs-22px: calc(22 / 16 * 1rem);
     --fs-24px: calc(24 / 16 * 1rem);
@@ -39,6 +41,7 @@
     --fs-30px: calc(30 / 16 * 1rem);
     --fs-32px: calc(32 / 16 * 1rem);
     --fs-36px: calc(36 / 16 * 1rem);
+    --fs-38px: calc(38 / 16 * 1rem);
     --fs-48px: calc(48 / 16 * 1rem);
 
     --font-size-h1: var(--fs-30px);

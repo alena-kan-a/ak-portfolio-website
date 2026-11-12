@@ -13,7 +13,7 @@
       Meiryo, sans-serif;
 
     --font-size-h2-jp: var(--fs-20px);
-    --font-size-h2-eng: var(--fs-28px);
+    --font-size-h2-eng: var(--fs-20px);
     --font-size-h3-jp: var(--fs-16px);
     --font-size-h3-eng: var(--fs-22px);
     --font-size-body-text-jp: var(--fs-14px);
@@ -28,7 +28,7 @@
 
     @media (width >= calc(600 / 16 * 1rem)) {
       --font-size-h2-jp: var(--fs-28px);
-      --font-size-h2-eng: var(--fs-38px);
+      --font-size-h2-eng: var(--fs-28px);
       --font-size-h3-jp: var(--fs-20px);
       --font-size-h3-eng: var(--fs-28px);
       --font-size-body-text-jp: var(--fs-16px);
@@ -244,13 +244,19 @@
     font-family: var(--font-secondary-jp);
     font-size: var(--font-size-h2-jp);
     font-weight: 900;
-    padding-block: 1.5rem;
+    line-height: 1.3em;
+    padding-block: 1.4rem 1.2rem;
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      padding-block: 1.7rem;
+    }
   }
 
   .h2-project-name-eng {
     font-family: var(--font-secondary);
     font-size: var(--font-size-h2-eng);
     font-weight: 700;
+    text-transform: uppercase;
   }
 
   .project-description__jp-body {
@@ -262,7 +268,7 @@
     letter-spacing: 0.03em;
 
     p {
-      padding-bottom: 0.8em;
+      padding-bottom: 0;
     }
 
     .project-description__jp-body__en-words {

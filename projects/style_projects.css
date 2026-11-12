@@ -25,12 +25,24 @@
       padding-bottom: 1rem;
     }
 
+    .project-description__thumbnail {
+      @media (width >= calc(1260 / 16 * 1rem)) {
+        margin-top: 0.1rem;
+      }
+      /* lowered the image for the Japanese version of the page to align with the top part of the description text */
+    }
+
     .project-description {
       padding-block: 0.5rem 0.3rem;
 
       @media (width >= calc(1260 / 16 * 1rem)) {
         padding-left: 2rem;
         padding-block: 0;
+        margin-top: -0.3rem;
+      }
+
+      p {
+        padding-bottom: 0.2rem;
       }
 
       .project-description__item {

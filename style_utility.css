@@ -46,4 +46,8 @@
     z-index: 1000;
     overflow: hidden;
   }
+
+  .hanging-punctuation__first {
+    text-indent: -0.4em;
+  }
 }

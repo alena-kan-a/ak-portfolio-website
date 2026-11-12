@@ -257,12 +257,16 @@
 
     .dropcap-paragraph {
       &::first-letter {
-        initial-letter: 3;
-        -webkit-initial-letter: 3;
+        initial-letter: 2;
+        -webkit-initial-letter: 2;
       }
       text-indent: 0;
 
       @media (width >= calc(600 / 16 * 1rem)) {
+        &::first-letter {
+          initial-letter: 3;
+          -webkit-initial-letter: 3;
+        }
         text-indent: 0.7em;
       }
     }

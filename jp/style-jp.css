@@ -79,6 +79,7 @@
   .works__project-title_jp {
     display: block;
     padding-block: 0.7rem 0.65rem;
+    line-height: 1.4em;
   }
 
   .works__project-title_eng {
@@ -170,6 +171,7 @@
           font-family: var(--font-secondary-jp);
           font-size: var(--font-size-privacy-policy-h2);
           font-weight: 500;
+          line-height: 1.4em;
           text-wrap: pretty;
         }
 

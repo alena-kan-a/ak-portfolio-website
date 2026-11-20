@@ -101,6 +101,10 @@
       &:hover {
         opacity: 0.7;
       }
+
+      h3 {
+        padding-block: 0.8rem 0;
+      }
     }
   }
 

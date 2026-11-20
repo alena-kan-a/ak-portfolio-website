@@ -10,6 +10,7 @@
 /* List of media queries
 @media (width <= calc(399 / 16 * 1rem))
 @media (width >= calc(400 / 16 * 1rem)) -- for footer
+@media (width <= calc(599 / 16 * 1rem)) -- for About section wrapper (to compensate for the fake dropcap)
 @media (width >= calc(600 / 16 * 1rem))
 @media (width >= calc(1000 / 16 * 1rem))
 @media (width >= calc(1248 / 16 * 1rem)) -- for section title padding
@@ -164,7 +165,6 @@
   h3 {
     line-height: 1.1;
     text-transform: lowercase;
-    text-wrap: balance;
   }
 
   h1 {
@@ -224,6 +224,10 @@
 
     @media (width >= calc(1260 / 16 * 1rem)) {
       grid-template-columns: 1fr 1fr;
+    }
+
+    @media (width <= calc(399 / 16 * 1rem)) {
+      width: min(calc(100% - 12px), calc(1032 / 16 * 1rem));
     }
   }
 

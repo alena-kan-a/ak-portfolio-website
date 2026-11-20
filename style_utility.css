@@ -50,4 +50,12 @@
   .hanging-punctuation__first {
     text-indent: -0.4em;
   }
+
+  :lang(ja) h2.h2-project-name-jp,
+  h3,
+  p,
+  label {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
 }
